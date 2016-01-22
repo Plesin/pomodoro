@@ -1,0 +1,23 @@
+/* Variables */
+$red: #F44336;
+$green: #14C147;
+
+.time { color: $green; display: inline-block; margin: 0.5em; }
+.time.isRunning { color: $red; }
+
+.play {
+    box-sizing: border-box;
+    width: 12px;
+    height: 16px;
+    border-top: 8px solid transparent;
+    border-left: 12px solid $green;
+    border-bottom: 8px solid transparent;
+}
+
+.pause {
+    box-sizing: border-box;
+    width: 12px;
+    height: 16px;
+    border-right: 4px solid $red;
+    border-left: 4px solid $red;
+}

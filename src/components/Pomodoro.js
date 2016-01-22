@@ -1,9 +1,12 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import Task from './Task';
 
 const Pomodoro = (props) => {
 
   return (
-    <h1>Welcome to Pomodoro!!!</h1>
+	<div>
+		<Task name={'Chill!'}/>
+	</div>
   );
 
 };
