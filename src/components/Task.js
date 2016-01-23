@@ -4,14 +4,18 @@ import Timer from './Timer';
 const Task = (props) => {
 	return (
 		<div>
-			<h1>{props.name}</h1>
-			<Timer time={10}/>
+			<Timer time={props.task.time}/>
 		</div>
 	);
 };
 
 Task.propTypes = {
-    name: React.PropTypes.string.isRequired
+	task: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		title: PropTypes.string.isRequired,
+		time: PropTypes.number.isRequired,
+		break: PropTypes.number
+	}).isRequired
 };
 
 export default Task;

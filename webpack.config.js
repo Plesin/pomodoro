@@ -36,7 +36,8 @@ var getLoaders = function(env) {
       test: /(\.css|\.scss)$/,
       include: path.join(__dirname, 'src'),
       loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
-    }
+    },
+    { test: /\.json$/, loader: 'json' }
   ];
 
   return loaders;
