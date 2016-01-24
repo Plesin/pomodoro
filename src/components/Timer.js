@@ -13,6 +13,17 @@ class Timer extends React.Component {
 		};
 	}
 
+	componentWillReceiveProps(nextProps) {
+		if (this.state.isRunning) {
+			// TODO temporary, suspends timer
+			if (confirm("Do you want to cancel current timer?")) {
+				this.setState({ time: nextProps.time });
+			}
+		} else {
+			this.setState({ time: nextProps.time });
+		}
+	}
+
 	start() {
 		this.interval = setInterval(()=> {
 			let newState = this.state.time - 1;

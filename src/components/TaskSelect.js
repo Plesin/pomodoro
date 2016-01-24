@@ -6,12 +6,13 @@ const TaskSelect = (props) => {
 	});
 
 	return (
-		<select>{options}</select>
+		<select onChange={props.onTaskSelected}>{options}</select>
 	);
 };
 
 TaskSelect.propTypes = {
-	tasks: PropTypes.arrayOf(PropTypes.object)
+	tasks: PropTypes.arrayOf(PropTypes.object),
+	onTaskSelected: PropTypes.func
 };
 
 export default TaskSelect;
