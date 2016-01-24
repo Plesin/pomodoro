@@ -17,10 +17,11 @@ class Timer extends React.Component {
 		if (this.state.isRunning) {
 			// TODO temporary, suspends timer
 			if (confirm("Do you want to cancel current timer?")) {
-				this.setState({ time: nextProps.time });
+				this.setState({ time: nextProps.time, startTime: nextProps.time, isRunning: false });
+				clearInterval(this.interval);
 			}
 		} else {
-			this.setState({ time: nextProps.time });
+			this.setState({ time: nextProps.time, startTime: nextProps.time });
 		}
 	}
 
@@ -47,6 +48,11 @@ class Timer extends React.Component {
 		}
 	}
 
+	resetTimer() {
+		this.setState({time: this.state.startTime, isRunning: false});
+		clearInterval(this.interval);
+	}
+
 	formatTime(seconds) {
 		let min = Math.floor(seconds / 60);
 		let sec = seconds%60;
@@ -65,6 +71,7 @@ class Timer extends React.Component {
 			<div>
 				<h1 className={classes}>{timeFormated}</h1>
 				<div className={iconClasses} onClick={this.setStatus.bind(this)}></div>
+				<a className={'reset'} href="javascript:;" onClick={this.resetTimer.bind(this)}>Reset Timer</a>
 			</div>
 		);
 	}

@@ -1,10 +1,11 @@
 /* Variables */
 $red: #F44336;
 $green: #14C147;
+$textColor: #444;
 
 body {
     text-align: center;
-    color: #444;
+    color: $textColor;
 }
 
 #app {
@@ -14,10 +15,10 @@ body {
 }
 
 .time {
-    font-size: 90px;
+    font-size: 140px;
     color: $green;
     display: inline-block;
-    margin: 0.5em;
+    margin: 40px;
 }
 
 .time.isRunning { color: $red; }
@@ -42,4 +43,10 @@ body {
     height: 64px;
     border-right: 16px solid $red;
     border-left: 16px solid $red;
+}
+
+.reset {
+    display: inline-block;
+    margin-top: 3em;
+    color: $textColor;
 }
