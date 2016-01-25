@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import TaskSelect from './TaskSelect';
+import {tasks} from '../json/tasks';
 import Task from './Task';
 
 class Pomodoro extends React.Component {
@@ -7,8 +8,8 @@ class Pomodoro extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			tasks: props.tasks,
-			selectedTask: props.tasks[0]
+			tasks: tasks,
+			selectedTask: tasks[0]
 		};
 	}
 
@@ -23,6 +24,8 @@ class Pomodoro extends React.Component {
 	render() {
 		return (
 			<div>
+				<a href="/#editTasks" className={'floatRight'}>Edit tasks</a>
+				<a href="/#about" className={'floatLeft'}>About</a>
 				<TaskSelect tasks={this.state.tasks} onTaskSelected={this.setTask.bind(this)}/>
 				<Task task={this.state.selectedTask}/>
 			</div>

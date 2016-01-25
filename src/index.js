@@ -1,8 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Provider } from 'react-redux';
-import {tasks} from './json/tasks';
-import Pomodoro from './components/Pomodoro';
+import App from './components/App';
 import './styles/styles.scss';
 
-render( <Pomodoro tasks={tasks}/>, document.getElementById('app'));
+render( <App />, document.getElementById('app'));

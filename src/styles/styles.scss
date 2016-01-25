@@ -3,6 +3,14 @@ $red: #F44336;
 $green: #14C147;
 $textColor: #444;
 
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
 body {
     text-align: center;
     color: $textColor;
