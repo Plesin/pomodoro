@@ -1,4 +1,6 @@
 import React, {PropTypes} from 'react';
+import { Link } from 'react-router';
+
 import TaskSelect from './TaskSelect';
 import {tasks} from '../json/tasks';
 import Task from './Task';
@@ -24,9 +26,9 @@ class Pomodoro extends React.Component {
 	render() {
 		return (
 			<div>
-				<a href="/#editTasks" className={'floatRight'}>Edit tasks</a>
-				<a href="/#about" className={'floatLeft'}>About</a>
+				<Link to={'about'} className={'floatLeft'}>About</Link>
 				<TaskSelect tasks={this.state.tasks} onTaskSelected={this.setTask.bind(this)}/>
+				<Link to={`/taskDetail/${this.state.selectedTask.id}`}>Edit</Link>
 				<Task task={this.state.selectedTask}/>
 			</div>
 		);

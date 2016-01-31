@@ -1,15 +1,15 @@
 import React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, Link, browserHistory } from 'react-router'
 import Pomodoro from './Pomodoro';
 import About from './About';
-import TasksList from './TasksList';
+import TaskDetail from './TaskDetail';
 
 export default () => {
   return (
-    <Router>
+    <Router history={browserHistory}>
 		<Route path="/" component={ Pomodoro } />
 		<Route path="about" component={ About } />
-		<Route path="editTasks" component={ TasksList } />
+		<Route path="taskDetail/:taskId" component={ TaskDetail } />
     </Router>
   );
 }
